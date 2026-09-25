@@ -1,0 +1,6 @@
+# Solo se usa al abrir el proyecto con Dev Containers.
+# Monta el repo completo en /workspace para que git y el editor vean todo.
+services:
+  odoo:
+    volumes:
+      - ..:/workspace:cached

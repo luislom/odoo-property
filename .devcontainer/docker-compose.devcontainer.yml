@@ -2,5 +2,7 @@
 # Monta el repo completo en /workspace para que git y el editor vean todo.
 services:
   odoo:
+    environment:
+      SHELL: /bin/bash
     volumes:
-      - ..:/workspace:cached
+      - .:/workspace:cached

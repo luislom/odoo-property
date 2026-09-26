@@ -47,7 +47,7 @@ Luego en Odoo: activa el modo desarrollador → Aplicaciones → Actualizar list
 
 ## Actualizar un módulo tras cambios en modelos
 ```bash
-docker compose run --rm odoo odoo -u mi_modulo -d NOMBRE_BD --stop-after-init
+docker compose run --rm odoo odoo -u mi_modulo -d odoo_dev --stop-after-init
 docker compose restart odoo
 ```
 

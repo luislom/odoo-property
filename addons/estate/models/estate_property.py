@@ -45,6 +45,17 @@ class EstateProperty(models.Model):
     state = fields.Selection(string="State", selection=[('new', 'New'), ('offerAccepted', 'Offer Accepted'),('offerReceived', 'offerReceived'), ('sold', 'Sold'), ('cancelled', 'Cancelled')], required=True, default='new', copy=False)
 
 
+    def copy_data(self, default = None):
+
+        vals_list = super().copy_data(default = default)
+        default = default or {}
+        for record, vals in zip(self, vals_list):
+            if 'name' not in default and record.name:
+                vals['name'] =  self.env._("%s (copia)", record.name)
+        return vals_list
+
+
+
 
 
 
